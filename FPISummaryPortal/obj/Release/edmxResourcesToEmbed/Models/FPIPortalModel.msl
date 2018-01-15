@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FPI_Dev_DatabaseModelStoreContainer" CdmEntityContainer="FPI_Dev_DatabaseEntities1">
+    <EntitySetMapping Name="HG_PDM">
+      <EntityTypeMapping TypeName="FPI_Dev_DatabaseModel.HG_PDM">
+        <MappingFragment StoreEntitySet="HG_PDM">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="CountryOfOriginStatement" ColumnName="CountryOfOriginStatement" />
+          <ScalarProperty Name="IngredientListDeclared" ColumnName="IngredientListDeclared" />
+          <ScalarProperty Name="ItemDescriptionWeb" ColumnName="ItemDescriptionWeb" />
+          <ScalarProperty Name="ProductDescriptionWeb" ColumnName="ProductDescriptionWeb" />
+          <ScalarProperty Name="WebCookingHintsAndTips" ColumnName="WebCookingHintsAndTips" />
+          <ScalarProperty Name="ItemWebsitePublicReleaseDate" ColumnName="ItemWebsitePublicReleaseDate" />
+          <ScalarProperty Name="ItemWebsiteFuturePublishDate" ColumnName="ItemWebsiteFuturePublishDate" />
+          <ScalarProperty Name="ItemWebsiteDeactivateDate" ColumnName="ItemWebsiteDeactivateDate" />
+          <ScalarProperty Name="ItemLaunchDate" ColumnName="ItemLaunchDate" />
+          <ScalarProperty Name="NutritionalInformationFooter" ColumnName="NutritionalInformationFooter" />
+          <ScalarProperty Name="GMO" ColumnName="GMO" />
+          <ScalarProperty Name="IrradiatedIngredients" ColumnName="IrradiatedIngredients" />
+          <ScalarProperty Name="ServingSize" ColumnName="ServingSize" />
+          <ScalarProperty Name="ServingSizeUnitOfMeasure" ColumnName="ServingSizeUnitOfMeasure" />
+          <ScalarProperty Name="ServingsPerPackage" ColumnName="ServingsPerPackage" />
+          <ScalarProperty Name="Allergens" ColumnName="Allergens" />
+          <ScalarProperty Name="WebSegment" ColumnName="WebSegment" />
+          <ScalarProperty Name="WebSubSegment" ColumnName="WebSubSegment" />
+          <ScalarProperty Name="DependencyType" ColumnName="DependencyType" />
+          <ScalarProperty Name="Nutrients" ColumnName="Nutrients" />
+          <ScalarProperty Name="ConsumerStorageInstructions" ColumnName="ConsumerStorageInstructions" />
+          <ScalarProperty Name="Precautions" ColumnName="Precautions" />
+          <ScalarProperty Name="PreparationInstructions" ColumnName="PreparationInstructions" />
+          <ScalarProperty Name="PreparationState" ColumnName="PreparationState" />
+          <ScalarProperty Name="Claims" ColumnName="Claims" />
+          <ScalarProperty Name="Images" ColumnName="Images" />
+          <ScalarProperty Name="Introduction" ColumnName="Introduction" />
+          <ScalarProperty Name="LabelName" ColumnName="LabelName" />
+          <ScalarProperty Name="UpdateIndicator" ColumnName="UpdateIndicator" />
+          <ScalarProperty Name="RowNumber" ColumnName="RowNumber" />
+          <ScalarProperty Name="TransferredDate" ColumnName="TransferredDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="iICE_Staging">
+      <EntityTypeMapping TypeName="FPI_Dev_DatabaseModel.iICE_Staging">
+        <MappingFragment StoreEntitySet="iICE_Staging">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="WebSegment" ColumnName="WebSegment" />
+          <ScalarProperty Name="WebSubSegment" ColumnName="WebSubSegment" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="ItemDescriptionWeb" ColumnName="ItemDescriptionWeb" />
+          <ScalarProperty Name="ItemNameWeb" ColumnName="ItemNameWeb" />
+          <ScalarProperty Name="BrandDescription" ColumnName="BrandDescription" />
+          <ScalarProperty Name="CookingHintsAndtips" ColumnName="CookingHintsAndtips" />
+          <ScalarProperty Name="CookingInstructions" ColumnName="CookingInstructions" />
+          <ScalarProperty Name="ProductDescriptionWeb" ColumnName="ProductDescriptionWeb" />
+          <ScalarProperty Name="ProductIngredients" ColumnName="ProductIngredients" />
+          <ScalarProperty Name="PackSize" ColumnName="PackSize" />
+          <ScalarProperty Name="ServingSize" ColumnName="ServingSize" />
+          <ScalarProperty Name="ServingsPerPackage" ColumnName="ServingsPerPackage" />
+          <ScalarProperty Name="Claims" ColumnName="Claims" />
+          <ScalarProperty Name="Nutrition" ColumnName="Nutrition" />
+          <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
+          <ScalarProperty Name="UnPublishDate" ColumnName="UnPublishDate" />
+          <ScalarProperty Name="ChangeFlag" ColumnName="ChangeFlag" />
+          <ScalarProperty Name="Images" ColumnName="Images" />
+          <ScalarProperty Name="Thumbnail" ColumnName="Thumbnail" />
+          <ScalarProperty Name="Introduction" ColumnName="Introduction" />
+          <ScalarProperty Name="TransferredDate" ColumnName="TransferredDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="uspGetDatafromHG" FunctionName="FPI_Dev_DatabaseModel.Store.uspGetDatafromHG" />
+    <FunctionImportMapping FunctionImportName="uspGetDatafromiICEStaging" FunctionName="FPI_Dev_DatabaseModel.Store.uspGetDatafromiICEStaging" />
+  </EntityContainerMapping>
+</Mapping>

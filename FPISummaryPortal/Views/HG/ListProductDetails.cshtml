@@ -1,0 +1,283 @@
+﻿@model FPISummaryPortal.Models.HG_PDM
+
+@{
+    ViewBag.Title = "ListProductDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ListProductDetails</h2>
+
+<div>
+    <h4>HG_PDM</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CountryOfOriginStatement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CountryOfOriginStatement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IngredientListDeclared)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IngredientListDeclared)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ItemDescriptionWeb)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemDescriptionWeb)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductDescriptionWeb)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductDescriptionWeb)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WebCookingHintsAndTips)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WebCookingHintsAndTips)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ItemWebsitePublicReleaseDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemWebsitePublicReleaseDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ItemWebsiteFuturePublishDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemWebsiteFuturePublishDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ItemWebsiteDeactivateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemWebsiteDeactivateDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ItemLaunchDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemLaunchDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NutritionalInformationFooter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NutritionalInformationFooter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GMO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GMO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IrradiatedIngredients)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IrradiatedIngredients)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServingSize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServingSize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServingSizeUnitOfMeasure)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServingSizeUnitOfMeasure)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServingsPerPackage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServingsPerPackage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Allergens)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Allergens)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WebSegment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WebSegment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WebSubSegment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WebSubSegment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DependencyType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DependencyType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nutrients)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nutrients)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConsumerStorageInstructions)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConsumerStorageInstructions)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Precautions)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Precautions)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PreparationInstructions)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PreparationInstructions)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PreparationState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PreparationState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Claims)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Claims)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Images)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Images)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Introduction)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Introduction)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LabelName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LabelName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdateIndicator)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdateIndicator)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RowNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RowNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TransferredDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TransferredDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

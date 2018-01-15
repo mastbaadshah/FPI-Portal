@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FPI_Dev_DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="HG_PDM">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="ProductCode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CountryOfOriginStatement" Type="nvarchar(max)" />
+    <Property Name="IngredientListDeclared" Type="nvarchar(max)" />
+    <Property Name="ItemDescriptionWeb" Type="nvarchar(max)" />
+    <Property Name="ProductDescriptionWeb" Type="nvarchar(max)" />
+    <Property Name="WebCookingHintsAndTips" Type="nvarchar(max)" />
+    <Property Name="ItemWebsitePublicReleaseDate" Type="nvarchar(max)" />
+    <Property Name="ItemWebsiteFuturePublishDate" Type="nvarchar(max)" />
+    <Property Name="ItemWebsiteDeactivateDate" Type="nvarchar(max)" />
+    <Property Name="ItemLaunchDate" Type="nvarchar(max)" />
+    <Property Name="NutritionalInformationFooter" Type="nvarchar(max)" />
+    <Property Name="GMO" Type="nvarchar(max)" />
+    <Property Name="IrradiatedIngredients" Type="nvarchar(max)" />
+    <Property Name="ServingSize" Type="float" />
+    <Property Name="ServingSizeUnitOfMeasure" Type="nvarchar(max)" />
+    <Property Name="ServingsPerPackage" Type="float" />
+    <Property Name="Allergens" Type="nvarchar(max)" />
+    <Property Name="WebSegment" Type="nvarchar(max)" />
+    <Property Name="WebSubSegment" Type="nvarchar(max)" />
+    <Property Name="DependencyType" Type="nvarchar(max)" />
+    <Property Name="Nutrients" Type="nvarchar(max)" />
+    <Property Name="ConsumerStorageInstructions" Type="nvarchar(max)" />
+    <Property Name="Precautions" Type="nvarchar(max)" />
+    <Property Name="PreparationInstructions" Type="nvarchar(max)" />
+    <Property Name="PreparationState" Type="nvarchar(max)" />
+    <Property Name="Claims" Type="nvarchar(max)" />
+    <Property Name="Images" Type="nvarchar(max)" />
+    <Property Name="Introduction" Type="nvarchar(max)" />
+    <Property Name="LabelName" Type="nvarchar(max)" />
+    <Property Name="UpdateIndicator" Type="nvarchar(max)" />
+    <Property Name="RowNumber" Type="int" />
+    <Property Name="TransferredDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="iICE_Staging">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WebSegment" Type="nvarchar(max)" />
+    <Property Name="WebSubSegment" Type="nvarchar(max)" />
+    <Property Name="ItemCode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ItemDescriptionWeb" Type="nvarchar(max)" />
+    <Property Name="ItemNameWeb" Type="nvarchar(max)" />
+    <Property Name="BrandDescription" Type="nvarchar(max)" />
+    <Property Name="CookingHintsAndtips" Type="nvarchar(max)" />
+    <Property Name="CookingInstructions" Type="nvarchar(max)" />
+    <Property Name="ProductDescriptionWeb" Type="nvarchar(max)" />
+    <Property Name="ProductIngredients" Type="nvarchar(max)" />
+    <Property Name="PackSize" Type="nvarchar(max)" />
+    <Property Name="ServingSize" Type="nvarchar(max)" />
+    <Property Name="ServingsPerPackage" Type="nvarchar(max)" />
+    <Property Name="Claims" Type="nvarchar(max)" />
+    <Property Name="Nutrition" Type="nvarchar(max)" />
+    <Property Name="PublishDate" Type="nvarchar(max)" />
+    <Property Name="UnPublishDate" Type="nvarchar(max)" />
+    <Property Name="ChangeFlag" Type="nvarchar(max)" />
+    <Property Name="Images" Type="nvarchar(max)" />
+    <Property Name="Thumbnail" Type="nvarchar(max)" />
+    <Property Name="Introduction" Type="nvarchar(max)" />
+    <Property Name="TransferredDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Log">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Thread" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Level" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Logger" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Message" Type="varchar" MaxLength="4000" Nullable="false" />
+    <Property Name="Exception" Type="varchar" MaxLength="2000" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'FPI_Dev_Database.dbo.xItemClaims' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="xItemClaims">
+    <Key>
+      <PropertyRef Name="xItemClaimId" />
+    </Key>
+    <Property Name="xItemClaimId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="xItemClaim" Type="nvarchar" MaxLength="4000" />
+    <Property Name="xItemBrand" Type="nvarchar" MaxLength="4000" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="4000" />
+    <Property Name="ItemId" Type="nvarchar" MaxLength="4000" />
+    <Property Name="CreateDateTime" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'FPI_Dev_Database.dbo.xItemImagesDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="xItemImagesDetail">
+    <Key>
+      <PropertyRef Name="xItemImageId" />
+    </Key>
+    <Property Name="xItemImageId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ImageId" Type="nvarchar" MaxLength="4000" />
+    <Property Name="ImagePath" Type="nvarchar(max)" />
+    <Property Name="ImageIsThumbnail" Type="bit" />
+    <Property Name="ModifiedDateTime" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'FPI_Dev_Database.dbo.xItemImagesHeader' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="xItemImagesHeader">
+    <Key>
+      <PropertyRef Name="xItemImageId" />
+    </Key>
+    <Property Name="xItemImageId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="xItemCode" Type="nvarchar" MaxLength="4000" />
+    <Property Name="xItemDescriptionWeb" Type="nvarchar" MaxLength="4000" />
+    <Property Name="xItemBrand" Type="nvarchar" MaxLength="4000" />
+    <Property Name="xItemImageType" Type="nvarchar" MaxLength="4000" />
+    <Property Name="xItemImageTypeId" Type="nvarchar" MaxLength="4000" />
+    <Property Name="xItemImageSize" Type="nvarchar" MaxLength="4000" />
+    <Property Name="xItemAssetType" Type="int" />
+  </EntityType>
+  <Function Name="uspGetDatafromHG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="uspGetDatafromiICEStaging" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="FPI_Dev_DatabaseModelStoreContainer">
+    <EntitySet Name="HG_PDM" EntityType="Self.HG_PDM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="iICE_Staging" EntityType="Self.iICE_Staging" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Log" EntityType="Self.Log" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="xItemClaims" EntityType="Self.xItemClaims" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [xItemClaims].[xItemClaimId] AS [xItemClaimId], 
+    [xItemClaims].[xItemClaim] AS [xItemClaim], 
+    [xItemClaims].[xItemBrand] AS [xItemBrand], 
+    [xItemClaims].[ItemName] AS [ItemName], 
+    [xItemClaims].[ItemId] AS [ItemId], 
+    [xItemClaims].[CreateDateTime] AS [CreateDateTime]
+    FROM [dbo].[xItemClaims] AS [xItemClaims]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="xItemImagesDetail" EntityType="Self.xItemImagesDetail" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [xItemImagesDetail].[xItemImageId] AS [xItemImageId], 
+    [xItemImagesDetail].[ImageId] AS [ImageId], 
+    [xItemImagesDetail].[ImagePath] AS [ImagePath], 
+    [xItemImagesDetail].[ImageIsThumbnail] AS [ImageIsThumbnail], 
+    [xItemImagesDetail].[ModifiedDateTime] AS [ModifiedDateTime]
+    FROM [dbo].[xItemImagesDetail] AS [xItemImagesDetail]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="xItemImagesHeader" EntityType="Self.xItemImagesHeader" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [xItemImagesHeader].[xItemImageId] AS [xItemImageId], 
+    [xItemImagesHeader].[xItemCode] AS [xItemCode], 
+    [xItemImagesHeader].[xItemDescriptionWeb] AS [xItemDescriptionWeb], 
+    [xItemImagesHeader].[xItemBrand] AS [xItemBrand], 
+    [xItemImagesHeader].[xItemImageType] AS [xItemImageType], 
+    [xItemImagesHeader].[xItemImageTypeId] AS [xItemImageTypeId], 
+    [xItemImagesHeader].[xItemImageSize] AS [xItemImageSize], 
+    [xItemImagesHeader].[xItemAssetType] AS [xItemAssetType]
+    FROM [dbo].[xItemImagesHeader] AS [xItemImagesHeader]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

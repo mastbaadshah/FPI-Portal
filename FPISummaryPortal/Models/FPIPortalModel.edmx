@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FPI_Dev_DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="HG_PDM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductID" Type="int" />
+          <Property Name="ProductCode" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CountryOfOriginStatement" Type="nvarchar(max)" />
+          <Property Name="IngredientListDeclared" Type="nvarchar(max)" />
+          <Property Name="ItemDescriptionWeb" Type="nvarchar(max)" />
+          <Property Name="ProductDescriptionWeb" Type="nvarchar(max)" />
+          <Property Name="WebCookingHintsAndTips" Type="nvarchar(max)" />
+          <Property Name="ItemWebsitePublicReleaseDate" Type="nvarchar(max)" />
+          <Property Name="ItemWebsiteFuturePublishDate" Type="nvarchar(max)" />
+          <Property Name="ItemWebsiteDeactivateDate" Type="nvarchar(max)" />
+          <Property Name="ItemLaunchDate" Type="nvarchar(max)" />
+          <Property Name="NutritionalInformationFooter" Type="nvarchar(max)" />
+          <Property Name="GMO" Type="nvarchar(max)" />
+          <Property Name="IrradiatedIngredients" Type="nvarchar(max)" />
+          <Property Name="ServingSize" Type="float" />
+          <Property Name="ServingSizeUnitOfMeasure" Type="nvarchar(max)" />
+          <Property Name="ServingsPerPackage" Type="float" />
+          <Property Name="Allergens" Type="nvarchar(max)" />
+          <Property Name="WebSegment" Type="nvarchar(max)" />
+          <Property Name="WebSubSegment" Type="nvarchar(max)" />
+          <Property Name="DependencyType" Type="nvarchar(max)" />
+          <Property Name="Nutrients" Type="nvarchar(max)" />
+          <Property Name="ConsumerStorageInstructions" Type="nvarchar(max)" />
+          <Property Name="Precautions" Type="nvarchar(max)" />
+          <Property Name="PreparationInstructions" Type="nvarchar(max)" />
+          <Property Name="PreparationState" Type="nvarchar(max)" />
+          <Property Name="Claims" Type="nvarchar(max)" />
+          <Property Name="Images" Type="nvarchar(max)" />
+          <Property Name="Introduction" Type="nvarchar(max)" />
+          <Property Name="LabelName" Type="nvarchar(max)" />
+          <Property Name="UpdateIndicator" Type="nvarchar(max)" />
+          <Property Name="RowNumber" Type="int" />
+          <Property Name="TransferredDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="iICE_Staging">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WebSegment" Type="nvarchar(max)" />
+          <Property Name="WebSubSegment" Type="nvarchar(max)" />
+          <Property Name="ItemCode" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ItemDescriptionWeb" Type="nvarchar(max)" />
+          <Property Name="ItemNameWeb" Type="nvarchar(max)" />
+          <Property Name="BrandDescription" Type="nvarchar(max)" />
+          <Property Name="CookingHintsAndtips" Type="nvarchar(max)" />
+          <Property Name="CookingInstructions" Type="nvarchar(max)" />
+          <Property Name="ProductDescriptionWeb" Type="nvarchar(max)" />
+          <Property Name="ProductIngredients" Type="nvarchar(max)" />
+          <Property Name="PackSize" Type="nvarchar(max)" />
+          <Property Name="ServingSize" Type="nvarchar(max)" />
+          <Property Name="ServingsPerPackage" Type="nvarchar(max)" />
+          <Property Name="Claims" Type="nvarchar(max)" />
+          <Property Name="Nutrition" Type="nvarchar(max)" />
+          <Property Name="PublishDate" Type="nvarchar(max)" />
+          <Property Name="UnPublishDate" Type="nvarchar(max)" />
+          <Property Name="ChangeFlag" Type="nvarchar(max)" />
+          <Property Name="Images" Type="nvarchar(max)" />
+          <Property Name="Thumbnail" Type="nvarchar(max)" />
+          <Property Name="Introduction" Type="nvarchar(max)" />
+          <Property Name="TransferredDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Log">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Thread" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Level" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Logger" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Message" Type="varchar" MaxLength="4000" Nullable="false" />
+          <Property Name="Exception" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'FPI_Dev_Database.dbo.xItemClaims' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="xItemClaims">
+          <Key>
+            <PropertyRef Name="xItemClaimId" />
+          </Key>
+          <Property Name="xItemClaimId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="xItemClaim" Type="nvarchar" MaxLength="4000" />
+          <Property Name="xItemBrand" Type="nvarchar" MaxLength="4000" />
+          <Property Name="ItemName" Type="nvarchar" MaxLength="4000" />
+          <Property Name="ItemId" Type="nvarchar" MaxLength="4000" />
+          <Property Name="CreateDateTime" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'FPI_Dev_Database.dbo.xItemImagesDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="xItemImagesDetail">
+          <Key>
+            <PropertyRef Name="xItemImageId" />
+          </Key>
+          <Property Name="xItemImageId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ImageId" Type="nvarchar" MaxLength="4000" />
+          <Property Name="ImagePath" Type="nvarchar(max)" />
+          <Property Name="ImageIsThumbnail" Type="bit" />
+          <Property Name="ModifiedDateTime" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'FPI_Dev_Database.dbo.xItemImagesHeader' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="xItemImagesHeader">
+          <Key>
+            <PropertyRef Name="xItemImageId" />
+          </Key>
+          <Property Name="xItemImageId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="xItemCode" Type="nvarchar" MaxLength="4000" />
+          <Property Name="xItemDescriptionWeb" Type="nvarchar" MaxLength="4000" />
+          <Property Name="xItemBrand" Type="nvarchar" MaxLength="4000" />
+          <Property Name="xItemImageType" Type="nvarchar" MaxLength="4000" />
+          <Property Name="xItemImageTypeId" Type="nvarchar" MaxLength="4000" />
+          <Property Name="xItemImageSize" Type="nvarchar" MaxLength="4000" />
+          <Property Name="xItemAssetType" Type="int" />
+        </EntityType>
+        <Function Name="uspGetDatafromHG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="uspGetDatafromiICEStaging" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="FPI_Dev_DatabaseModelStoreContainer">
+          <EntitySet Name="HG_PDM" EntityType="Self.HG_PDM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="iICE_Staging" EntityType="Self.iICE_Staging" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Log" EntityType="Self.Log" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="xItemClaims" EntityType="Self.xItemClaims" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [xItemClaims].[xItemClaimId] AS [xItemClaimId], 
+    [xItemClaims].[xItemClaim] AS [xItemClaim], 
+    [xItemClaims].[xItemBrand] AS [xItemBrand], 
+    [xItemClaims].[ItemName] AS [ItemName], 
+    [xItemClaims].[ItemId] AS [ItemId], 
+    [xItemClaims].[CreateDateTime] AS [CreateDateTime]
+    FROM [dbo].[xItemClaims] AS [xItemClaims]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="xItemImagesDetail" EntityType="Self.xItemImagesDetail" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [xItemImagesDetail].[xItemImageId] AS [xItemImageId], 
+    [xItemImagesDetail].[ImageId] AS [ImageId], 
+    [xItemImagesDetail].[ImagePath] AS [ImagePath], 
+    [xItemImagesDetail].[ImageIsThumbnail] AS [ImageIsThumbnail], 
+    [xItemImagesDetail].[ModifiedDateTime] AS [ModifiedDateTime]
+    FROM [dbo].[xItemImagesDetail] AS [xItemImagesDetail]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="xItemImagesHeader" EntityType="Self.xItemImagesHeader" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [xItemImagesHeader].[xItemImageId] AS [xItemImageId], 
+    [xItemImagesHeader].[xItemCode] AS [xItemCode], 
+    [xItemImagesHeader].[xItemDescriptionWeb] AS [xItemDescriptionWeb], 
+    [xItemImagesHeader].[xItemBrand] AS [xItemBrand], 
+    [xItemImagesHeader].[xItemImageType] AS [xItemImageType], 
+    [xItemImagesHeader].[xItemImageTypeId] AS [xItemImageTypeId], 
+    [xItemImagesHeader].[xItemImageSize] AS [xItemImageSize], 
+    [xItemImagesHeader].[xItemAssetType] AS [xItemAssetType]
+    FROM [dbo].[xItemImagesHeader] AS [xItemImagesHeader]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FPI_Dev_DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="HG_PDM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductID" Type="Int32" />
+          <Property Name="ProductCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CountryOfOriginStatement" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IngredientListDeclared" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ItemDescriptionWeb" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProductDescriptionWeb" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WebCookingHintsAndTips" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ItemWebsitePublicReleaseDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ItemWebsiteFuturePublishDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ItemWebsiteDeactivateDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ItemLaunchDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NutritionalInformationFooter" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GMO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IrradiatedIngredients" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ServingSize" Type="Double" />
+          <Property Name="ServingSizeUnitOfMeasure" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ServingsPerPackage" Type="Double" />
+          <Property Name="Allergens" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WebSegment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WebSubSegment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DependencyType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Nutrients" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ConsumerStorageInstructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Precautions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PreparationInstructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PreparationState" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Claims" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Images" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Introduction" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LabelName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateIndicator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RowNumber" Type="Int32" />
+          <Property Name="TransferredDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="iICE_Staging">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WebSegment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WebSubSegment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ItemCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ItemDescriptionWeb" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ItemNameWeb" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BrandDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CookingHintsAndtips" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CookingInstructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProductDescriptionWeb" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProductIngredients" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PackSize" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ServingSize" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ServingsPerPackage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Claims" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Nutrition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PublishDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UnPublishDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ChangeFlag" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Images" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Thumbnail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Introduction" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TransferredDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="FPI_Dev_DatabaseEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="HG_PDM" EntityType="Self.HG_PDM" />
+          <EntitySet Name="iICE_Staging" EntityType="Self.iICE_Staging" />
+          <FunctionImport Name="uspGetDatafromHG" />
+          <FunctionImport Name="uspGetDatafromiICEStaging" />
+          <EntitySet Name="Logs" EntityType="FPI_Dev_DatabaseModel.Log" />
+          <EntitySet Name="xItemClaims" EntityType="FPI_Dev_DatabaseModel.xItemClaim" />
+          <EntitySet Name="xItemImagesDetails" EntityType="FPI_Dev_DatabaseModel.xItemImagesDetail" />
+          <EntitySet Name="xItemImagesHeaders" EntityType="FPI_Dev_DatabaseModel.xItemImagesHeader" />
+        </EntityContainer>
+        <EntityType Name="Log">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Thread" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Level" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Logger" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Message" Type="String" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="Exception" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="xItemClaim">
+          <Key>
+            <PropertyRef Name="xItemClaimId" />
+          </Key>
+          <Property Name="xItemClaimId" Type="Guid" Nullable="false" />
+          <Property Name="xItemClaim1" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="xItemBrand" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="ItemName" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="ItemId" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="xItemImagesDetail">
+          <Key>
+            <PropertyRef Name="xItemImageId" />
+          </Key>
+          <Property Name="xItemImageId" Type="Guid" Nullable="false" />
+          <Property Name="ImageId" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ImageIsThumbnail" Type="Boolean" />
+          <Property Name="ModifiedDateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="xItemImagesHeader">
+          <Key>
+            <PropertyRef Name="xItemImageId" />
+          </Key>
+          <Property Name="xItemImageId" Type="Guid" Nullable="false" />
+          <Property Name="xItemCode" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="xItemDescriptionWeb" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="xItemBrand" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="xItemImageType" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="xItemImageTypeId" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="xItemImageSize" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="xItemAssetType" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FPI_Dev_DatabaseModelStoreContainer" CdmEntityContainer="FPI_Dev_DatabaseEntities1">
+          <EntitySetMapping Name="HG_PDM">
+            <EntityTypeMapping TypeName="FPI_Dev_DatabaseModel.HG_PDM">
+              <MappingFragment StoreEntitySet="HG_PDM">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="CountryOfOriginStatement" ColumnName="CountryOfOriginStatement" />
+                <ScalarProperty Name="IngredientListDeclared" ColumnName="IngredientListDeclared" />
+                <ScalarProperty Name="ItemDescriptionWeb" ColumnName="ItemDescriptionWeb" />
+                <ScalarProperty Name="ProductDescriptionWeb" ColumnName="ProductDescriptionWeb" />
+                <ScalarProperty Name="WebCookingHintsAndTips" ColumnName="WebCookingHintsAndTips" />
+                <ScalarProperty Name="ItemWebsitePublicReleaseDate" ColumnName="ItemWebsitePublicReleaseDate" />
+                <ScalarProperty Name="ItemWebsiteFuturePublishDate" ColumnName="ItemWebsiteFuturePublishDate" />
+                <ScalarProperty Name="ItemWebsiteDeactivateDate" ColumnName="ItemWebsiteDeactivateDate" />
+                <ScalarProperty Name="ItemLaunchDate" ColumnName="ItemLaunchDate" />
+                <ScalarProperty Name="NutritionalInformationFooter" ColumnName="NutritionalInformationFooter" />
+                <ScalarProperty Name="GMO" ColumnName="GMO" />
+                <ScalarProperty Name="IrradiatedIngredients" ColumnName="IrradiatedIngredients" />
+                <ScalarProperty Name="ServingSize" ColumnName="ServingSize" />
+                <ScalarProperty Name="ServingSizeUnitOfMeasure" ColumnName="ServingSizeUnitOfMeasure" />
+                <ScalarProperty Name="ServingsPerPackage" ColumnName="ServingsPerPackage" />
+                <ScalarProperty Name="Allergens" ColumnName="Allergens" />
+                <ScalarProperty Name="WebSegment" ColumnName="WebSegment" />
+                <ScalarProperty Name="WebSubSegment" ColumnName="WebSubSegment" />
+                <ScalarProperty Name="DependencyType" ColumnName="DependencyType" />
+                <ScalarProperty Name="Nutrients" ColumnName="Nutrients" />
+                <ScalarProperty Name="ConsumerStorageInstructions" ColumnName="ConsumerStorageInstructions" />
+                <ScalarProperty Name="Precautions" ColumnName="Precautions" />
+                <ScalarProperty Name="PreparationInstructions" ColumnName="PreparationInstructions" />
+                <ScalarProperty Name="PreparationState" ColumnName="PreparationState" />
+                <ScalarProperty Name="Claims" ColumnName="Claims" />
+                <ScalarProperty Name="Images" ColumnName="Images" />
+                <ScalarProperty Name="Introduction" ColumnName="Introduction" />
+                <ScalarProperty Name="LabelName" ColumnName="LabelName" />
+                <ScalarProperty Name="UpdateIndicator" ColumnName="UpdateIndicator" />
+                <ScalarProperty Name="RowNumber" ColumnName="RowNumber" />
+                <ScalarProperty Name="TransferredDate" ColumnName="TransferredDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="iICE_Staging">
+            <EntityTypeMapping TypeName="FPI_Dev_DatabaseModel.iICE_Staging">
+              <MappingFragment StoreEntitySet="iICE_Staging">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="WebSegment" ColumnName="WebSegment" />
+                <ScalarProperty Name="WebSubSegment" ColumnName="WebSubSegment" />
+                <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+                <ScalarProperty Name="ItemDescriptionWeb" ColumnName="ItemDescriptionWeb" />
+                <ScalarProperty Name="ItemNameWeb" ColumnName="ItemNameWeb" />
+                <ScalarProperty Name="BrandDescription" ColumnName="BrandDescription" />
+                <ScalarProperty Name="CookingHintsAndtips" ColumnName="CookingHintsAndtips" />
+                <ScalarProperty Name="CookingInstructions" ColumnName="CookingInstructions" />
+                <ScalarProperty Name="ProductDescriptionWeb" ColumnName="ProductDescriptionWeb" />
+                <ScalarProperty Name="ProductIngredients" ColumnName="ProductIngredients" />
+                <ScalarProperty Name="PackSize" ColumnName="PackSize" />
+                <ScalarProperty Name="ServingSize" ColumnName="ServingSize" />
+                <ScalarProperty Name="ServingsPerPackage" ColumnName="ServingsPerPackage" />
+                <ScalarProperty Name="Claims" ColumnName="Claims" />
+                <ScalarProperty Name="Nutrition" ColumnName="Nutrition" />
+                <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
+                <ScalarProperty Name="UnPublishDate" ColumnName="UnPublishDate" />
+                <ScalarProperty Name="ChangeFlag" ColumnName="ChangeFlag" />
+                <ScalarProperty Name="Images" ColumnName="Images" />
+                <ScalarProperty Name="Thumbnail" ColumnName="Thumbnail" />
+                <ScalarProperty Name="Introduction" ColumnName="Introduction" />
+                <ScalarProperty Name="TransferredDate" ColumnName="TransferredDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="uspGetDatafromHG" FunctionName="FPI_Dev_DatabaseModel.Store.uspGetDatafromHG" />
+          <FunctionImportMapping FunctionImportName="uspGetDatafromiICEStaging" FunctionName="FPI_Dev_DatabaseModel.Store.uspGetDatafromiICEStaging" />
+          <EntitySetMapping Name="Logs">
+            <EntityTypeMapping TypeName="FPI_Dev_DatabaseModel.Log">
+              <MappingFragment StoreEntitySet="Log">
+                <ScalarProperty Name="Exception" ColumnName="Exception" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Logger" ColumnName="Logger" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="Thread" ColumnName="Thread" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="xItemClaims">
+            <EntityTypeMapping TypeName="FPI_Dev_DatabaseModel.xItemClaim">
+              <MappingFragment StoreEntitySet="xItemClaims">
+                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="xItemBrand" ColumnName="xItemBrand" />
+                <ScalarProperty Name="xItemClaim1" ColumnName="xItemClaim" />
+                <ScalarProperty Name="xItemClaimId" ColumnName="xItemClaimId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="xItemImagesDetails">
+            <EntityTypeMapping TypeName="FPI_Dev_DatabaseModel.xItemImagesDetail">
+              <MappingFragment StoreEntitySet="xItemImagesDetail">
+                <ScalarProperty Name="ModifiedDateTime" ColumnName="ModifiedDateTime" />
+                <ScalarProperty Name="ImageIsThumbnail" ColumnName="ImageIsThumbnail" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+                <ScalarProperty Name="xItemImageId" ColumnName="xItemImageId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="xItemImagesHeaders">
+            <EntityTypeMapping TypeName="FPI_Dev_DatabaseModel.xItemImagesHeader">
+              <MappingFragment StoreEntitySet="xItemImagesHeader">
+                <ScalarProperty Name="xItemAssetType" ColumnName="xItemAssetType" />
+                <ScalarProperty Name="xItemImageSize" ColumnName="xItemImageSize" />
+                <ScalarProperty Name="xItemImageTypeId" ColumnName="xItemImageTypeId" />
+                <ScalarProperty Name="xItemImageType" ColumnName="xItemImageType" />
+                <ScalarProperty Name="xItemBrand" ColumnName="xItemBrand" />
+                <ScalarProperty Name="xItemDescriptionWeb" ColumnName="xItemDescriptionWeb" />
+                <ScalarProperty Name="xItemCode" ColumnName="xItemCode" />
+                <ScalarProperty Name="xItemImageId" ColumnName="xItemImageId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

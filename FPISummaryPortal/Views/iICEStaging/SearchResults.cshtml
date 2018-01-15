@@ -1,0 +1,52 @@
+﻿@model IEnumerable<FPISummaryPortal.Models.iICE_Staging>
+
+@{
+    ViewBag.Title = "SearchResults";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<center><h1>@ViewBag.Title</h1></center>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemNameWeb)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BrandDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TransferredDate)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemNameWeb)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BrandDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Introduction)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransferredDate)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) 
+            </td>
+        </tr>
+    }
+
+</table>

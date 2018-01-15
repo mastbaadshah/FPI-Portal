@@ -1,0 +1,93 @@
+﻿@model IEnumerable<FPISummaryPortal.Models.iICE_Staging>
+
+@{
+    ViewBag.Title = "ShowProductDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ShowProductDetails</h2>
+
+<br/>
+
+<center><strong>@ViewBag.NotificationMessage</strong></center>
+
+<br />
+
+@if (Session["ShowResultsDetailsiICE"] != null)
+{
+    <div class="table-responsive">
+        <div style="height:600px;overflow-y:auto">
+
+
+            <table class="table table-bordered table-condensed table-striped table-hover sortable">
+                <thead>
+                    <tr class="danger">
+                        <th>@Html.DisplayNameFor(model => model.WebSegment)</th>
+                        <th>@Html.DisplayNameFor(model => model.WebSubSegment)</th>
+                        <th>@Html.DisplayNameFor(model => model.ItemCode)</th>
+                        <th>@Html.DisplayNameFor(model => model.ItemDescriptionWeb)</th>
+                        <th>@Html.DisplayNameFor(model => model.ItemNameWeb)</th>
+                        <th>@Html.DisplayNameFor(model => model.BrandDescription)</th>
+                        <th>@Html.DisplayNameFor(model => model.CookingHintsAndtips)</th>
+                        <th>@Html.DisplayNameFor(model => model.CookingInstructions)</th>
+                        <th>@Html.DisplayNameFor(model => model.ProductDescriptionWeb)</th>
+                        <th>@Html.DisplayNameFor(model => model.ProductIngredients) </th>
+                        <th>@Html.DisplayNameFor(model => model.PackSize)</th>
+                        <th>@Html.DisplayNameFor(model => model.ServingSize)</th>
+                        <th>@Html.DisplayNameFor(model => model.ServingsPerPackage)</th>
+                        <th>@Html.DisplayNameFor(model => model.Claims)</th>
+                        <th>@Html.DisplayNameFor(model => model.Nutrition)</th>
+                        <th>@Html.DisplayNameFor(model => model.PublishDate)</th>
+                        <th>@Html.DisplayNameFor(model => model.UnPublishDate)</th>
+                        <th>@Html.DisplayNameFor(model => model.ChangeFlag)</th>
+                        <th>@Html.DisplayNameFor(model => model.Images)</th>
+                        <th>@Html.DisplayNameFor(model => model.Thumbnail)</th>
+                        <th>@Html.DisplayNameFor(model => model.Introduction)</th>
+                        <th>@Html.DisplayNameFor(model => model.TransferredDate)</th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.WebSegment)</td>
+                        <td>@Html.DisplayFor(modelItem => item.WebSubSegment)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ItemCode)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ItemDescriptionWeb)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ItemNameWeb)</td>
+                        <td>@Html.DisplayFor(modelItem => item.BrandDescription)</td>
+                        <td>@Html.DisplayFor(modelItem => item.CookingHintsAndtips)</td>
+                        <td>@Html.DisplayFor(modelItem => item.CookingInstructions)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ProductDescriptionWeb)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ProductIngredients)</td>
+                        <td>@Html.DisplayFor(modelItem => item.PackSize)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ServingSize)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ServingsPerPackage)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Claims)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Nutrition)</td>
+                        <td>@Html.DisplayFor(modelItem => item.PublishDate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.UnPublishDate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ChangeFlag)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Images)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Thumbnail)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Introduction)</td>
+                        <td>@Html.DisplayFor(modelItem => item.TransferredDate)</td>
+                    </tr>
+                }
+            </table>
+            <br />
+        </div>
+    </div>
+    
+}
+<br/>
+<br/>
+
+    <!-- Home and Back Button -->
+    <div class="form-inline">
+        @if (Request.UrlReferrer != null)
+        {
+            <button type="button" class="btn btn-primary" onclick="history.go(-1); return false;">Back</button>
+            <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Index", "Home")'">Home</button>
+        }
+    </div> <!--/.form-inline-->
+    <!--/.Home and Back Button-->

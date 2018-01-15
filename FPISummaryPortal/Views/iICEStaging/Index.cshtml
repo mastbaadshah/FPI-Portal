@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "iICEStagingMain";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>iICEStagingMain</h2>
+
+<div class="jumbotron">
+    <h1>iICE Staging</h1>
+    <p class="This portal provides summarized details of data transferred via FPI Process"</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Quick Product Code Look up</h2>
+        <p>
+            This view will display the FG produtcs being Sent from the HG Application (PDM Module)
+            that is being picked up by the FPI Process.
+        </p>
+        <p><a class="btn btn-default" href="@Html.AttributeEncode(Url.Action("SearchProduct", "iICEStaging"))">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Search Products By Date</h2>
+        <p>This View provides a listing of FG Products that have made it to iICE and consequently the iICE Staging Environment</p>
+        <p><a class="btn btn-default" href="@Html.AttributeEncode(Url.Action("ListProducts", "iICEStaging"))">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Search By Product Code</h2>
+        <p>This View provides a listing of Products that have made it successfully to teh iice staging Environment and others.</p>
+        <p><a class="btn btn-default" href="@Html.AttributeEncode(Url.Action("ListProductDetails", "iICEStaging"))">Learn more &raquo;</a></p>
+    </div>
+</div>
+

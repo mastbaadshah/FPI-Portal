@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "HG PDM";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron">
+    <h1>HG PDM</h1>
+    <p class="This portal provides summarized details of data transferred from HG PDM Module to iICE via glyphicon-text-height FPI Process"</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    @*<div class="col-md-4">
+        <h2>Search Product</h2>
+        <p>This view will allow to Search for a Product on the HG PDM to check if it was picked up or will be picked by the FPI Process</p>
+        <p><a class="btn btn-default" href="@Html.AttributeEncode(Url.Action("SearchProduct", "HG"))">Learn more &raquo;</a></p>
+    </div>*@
+    <div class="col-md-4">
+        <h2>Quick Product Code Look up</h2>
+        <p>This view will allow to List all the Products on the HG PDM that will be picked up by the FPI Process</p>
+        <p><a class="btn btn-default" href="@Html.AttributeEncode(Url.Action("SearchProduct", "HG"))">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Search By Date</h2>
+        <p>This view will allow to List all the Products along with the details on the HG PDM that will be picked up by the FPI Process.</p>
+        <p><a class="btn btn-default" href="@Html.AttributeEncode(Url.Action("SearchByDate", "HG"))">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Search By Product Code</h2>
+        <p>This view will allow to List all the Products along with the details on the HG PDM that will be picked up by the FPI Process.</p>
+        <p><a class="btn btn-default" href="@Html.AttributeEncode(Url.Action("SearchByProductCode", "HG"))">Learn more &raquo;</a></p>
+    </div>
+</div>
+

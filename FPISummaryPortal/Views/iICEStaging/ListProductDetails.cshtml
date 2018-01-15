@@ -1,0 +1,73 @@
+﻿@model FPISummaryPortal.Models.ProductInfo
+
+@{
+    ViewBag.Title = "Search Product Detail By Product Code";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html>
+<head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <!--Call to load Jquery-->
+    <script src="~/Scripts/jquery-3.2.1.js"></script>
+    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <!-- Call to Ajx-->
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+</head>
+<body>
+
+    <br />
+    <br />
+    <center><h1>@ViewBag.Title</h1></center>
+
+    <div class="container">
+        <p class="lead">
+            Please enter the <strong>Product Code</strong> to <strong>Search</strong> for the Listing of Product in the <strong>iICE Environment</strong>.
+        </p>
+    </div><!--/.container-->
+
+    
+
+@using (Html.BeginForm("ShowProductDetailListing", "iICEStaging", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container">
+        <!--Product Code-->
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.productCode, htmlAttributes: new { @class = "control-label col-md-6" })
+                    <div class="input-group">
+                        @Html.EditorFor(model => model.productCode, new { htmlAttributes = new { @class = "form-control", @placeholder = "Product Code", required = "required" } })<span class="input-group-addon"><i class="glyphicon glyphicon-qrcode"></i></span>
+                    </div><!--/.input-group date picker-->
+                    <center>@Html.ValidationMessageFor(model => model.productCode, "", new { @class = "text-danger" })</center>
+                </div><!--form-group-->
+            </div><!--/.col-sm-6-->
+        </div><!--/.Row-->
+    <br/>
+        <!-- Submit button -->
+        <div class="form-group">
+            <button class="btn btn-primary " id="lookpcodeiice" name="lookpcodeiice" type="submit" value="Submit">Submit</button>
+        </div><!-- /.form-group-->
+        <!-- /.Submit Button-->
+    <br/>
+        <!--Home and Back Button-->
+        <div class="form-inline">
+            @if (Request.UrlReferrer != null)
+            {
+                <button type="button" class="btn btn-primary" onclick="history.go(-1); return false;">Back</button>
+                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Index", "Home")'">Home</button>
+            }
+        </div> <!--/.form-inline-->
+        <!--/.Home and Back Button-->
+    </div><!--/.container-->
+}
+
+
+
+</body>
+
+</html>

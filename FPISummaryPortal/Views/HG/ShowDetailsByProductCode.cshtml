@@ -1,0 +1,52 @@
+﻿@model IEnumerable<FPISummaryPortal.Models.HG_PDM>
+
+@{
+    ViewBag.Title = "ShowDetailsByProductCode";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Show Details By ProductCode - Hamilton Grant (HG)</h2>
+
+<br />
+<center><strong>@ViewBag.productsHG</strong></center>
+<br />
+<br/>
+
+@if (Session["ShowHGProductListing"] != null)
+{
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-condensed table-striped table-hover sortable">
+            <thead>
+                <tr class="danger">
+                <tr class="danger">
+
+                    <th>@Html.DisplayNameFor(model => model.ProductCode)</th>
+                    <th>@Html.DisplayNameFor(model => model.ItemDescriptionWeb)</th>
+                    <th>@Html.DisplayNameFor(model => model.TransferredDate)</th>
+                    <th>Details</th>
+                </tr>
+                </thead>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.ProductCode)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ItemDescriptionWeb)</td>
+                        <td>@Html.DisplayFor(modelItem => item.TransferredDate)</td>
+                        <td>@Html.ActionLink("Details", "ShowHGProductDetails", new { id = item.ID })</td>
+                    </tr>
+                }
+            </table>
+        </div>
+}
+
+<!--Home and Back Button-->
+<div class="form-inline">
+    @if (Request.UrlReferrer != null)
+            {
+        <button type="button" class="btn btn-primary" onclick="history.go(-1); return false;">Back</button>
+        <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Index", "Home")'">Home</button>
+    }
+</div> <!--/.form-inline-->
+<!--/.Home and Back Button-->

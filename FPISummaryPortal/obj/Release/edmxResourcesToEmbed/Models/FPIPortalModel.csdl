@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FPI_Dev_DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="HG_PDM">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="Int32" />
+    <Property Name="ProductCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CountryOfOriginStatement" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IngredientListDeclared" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ItemDescriptionWeb" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductDescriptionWeb" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WebCookingHintsAndTips" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ItemWebsitePublicReleaseDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ItemWebsiteFuturePublishDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ItemWebsiteDeactivateDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ItemLaunchDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NutritionalInformationFooter" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GMO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IrradiatedIngredients" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ServingSize" Type="Double" />
+    <Property Name="ServingSizeUnitOfMeasure" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ServingsPerPackage" Type="Double" />
+    <Property Name="Allergens" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WebSegment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WebSubSegment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DependencyType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Nutrients" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ConsumerStorageInstructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Precautions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PreparationInstructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PreparationState" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Claims" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Images" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Introduction" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LabelName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateIndicator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RowNumber" Type="Int32" />
+    <Property Name="TransferredDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="iICE_Staging">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WebSegment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WebSubSegment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ItemCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ItemDescriptionWeb" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ItemNameWeb" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BrandDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CookingHintsAndtips" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CookingInstructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductDescriptionWeb" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductIngredients" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PackSize" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ServingSize" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ServingsPerPackage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Claims" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Nutrition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PublishDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UnPublishDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ChangeFlag" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Images" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Thumbnail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Introduction" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TransferredDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="FPI_Dev_DatabaseEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="HG_PDM" EntityType="Self.HG_PDM" />
+    <EntitySet Name="iICE_Staging" EntityType="Self.iICE_Staging" />
+    <FunctionImport Name="uspGetDatafromHG" />
+    <FunctionImport Name="uspGetDatafromiICEStaging" />
+  </EntityContainer>
+</Schema>

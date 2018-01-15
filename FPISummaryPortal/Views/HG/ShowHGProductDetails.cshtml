@@ -1,0 +1,231 @@
+﻿@model IEnumerable<FPISummaryPortal.Models.HG_PDM>
+
+@{
+    ViewBag.Title = "HG Product Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<center><h1><u>@ViewBag.Title</u></h1></center>
+<br />
+
+
+@if (Session["ShowDetailedListingOfProductsHG"] != null)
+{
+    <div class="table-responsive">
+        <table class="table table-bordered table-condensed table-striped table-hover sortable">
+            <thead>
+                    <tr class="danger">
+                        <th>
+                            @Html.DisplayNameFor(model => model.ProductCode)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CountryOfOriginStatement)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.IngredientListDeclared)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ItemDescriptionWeb)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ProductDescriptionWeb)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.WebCookingHintsAndTips)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ItemWebsitePublicReleaseDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ItemWebsiteFuturePublishDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ItemWebsiteDeactivateDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ItemLaunchDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.NutritionalInformationFooter)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.GMO)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.IrradiatedIngredients)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ServingSize)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ServingSizeUnitOfMeasure)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ServingsPerPackage)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Allergens)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.WebSegment)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.WebSubSegment)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DependencyType)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Nutrients)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ConsumerStorageInstructions)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Precautions)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.PreparationInstructions)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.PreparationState)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Claims)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Images)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Introduction)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.LabelName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.UpdateIndicator)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.RowNumber)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TransferredDate)
+                        </th>
+                    </tr>
+                </thead>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ProductCode)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CountryOfOriginStatement)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IngredientListDeclared)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ItemDescriptionWeb)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ProductDescriptionWeb)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.WebCookingHintsAndTips)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ItemWebsitePublicReleaseDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ItemWebsiteFuturePublishDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ItemWebsiteDeactivateDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ItemLaunchDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NutritionalInformationFooter)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.GMO)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IrradiatedIngredients)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ServingSize)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ServingSizeUnitOfMeasure)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ServingsPerPackage)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Allergens)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.WebSegment)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.WebSubSegment)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DependencyType)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Nutrients)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ConsumerStorageInstructions)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Precautions)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PreparationInstructions)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PreparationState)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Claims)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Images)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Introduction)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LabelName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.UpdateIndicator)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.RowNumber)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TransferredDate)
+                            </td>
+                        </tr>
+                    }
+
+               </table>
+        </div>
+
+}
+
+<!--Home and Back Button-->
+<div class="form-inline">
+    @if (Request.UrlReferrer != null)
+            {
+        <button type="button" class="btn btn-primary" onclick="history.go(-1); return false;">Back</button>
+        <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Index", "Home")'">Home</button>
+    }
+</div> <!--/.form-inline-->
+<!--/.Home and Back Button-->

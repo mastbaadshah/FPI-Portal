@@ -1,0 +1,115 @@
+﻿@model FPISummaryPortal.Models.SearchDate
+
+@{
+    ViewBag.Title = "SearchProducts In HG By Date";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<html>
+<head>
+    <!--Load Libraries-->
+    <!--Bootsrap Link-->
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.datetimepicker.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!--Call to load Jquery-->
+    <script src="~/Scripts/lib/jquery/jquery.min.js"></script>
+    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/jquery-3.2.1.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script src="~/Scripts/moment.js"></script>
+    <script src="~/Scripts/moment.min.js"></script>
+    <script src="~/Scripts/respond.js"></script>
+    <script src="~/Scripts/respond.min.js"></script>
+    <script src="~/Scripts/jquery.daterangepicker/daterangepicker.jQuery.js"></script>
+    <script src="~/Scripts/jquery.datetimepicker.js"></script>
+    <script src="~/Scripts/jquery.dateFormat-1.0.js"></script>
+
+    <!-- Call to Ajaxx-->
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <!-- Bootstrap Plugin -->
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <!--Date Picker-->
+    <script src="~/Scripts/bootstrap-datepicker.js"></script>
+    <script src="~/Scripts/bootstrap-datepicker.min.js"></script>
+    <!--DateTime Picker-->
+    <script src="~/Scripts/bootstrap-datetimepicker.js"></script>
+    <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+    <!--Section for Scripts-->
+    @section scripts {
+        @Scripts.Render("~/bundles/jqueryui")
+        @Styles.Render("~/Content/cssjqryUi")
+        @Scripts.Render("~/bundles/jqueryval")
+
+    }
+    <!--End Load Libraries-->
+</head>
+<body>
+    <br />
+    <br />
+    <h2>@ViewBag.Title</h2>
+    <div class="container">
+        <p class="lead">
+            Please Select a <strong>Date</strong> to List all Summary of Products from the <strong>HG Environment</strong> that was processed by the <strong>FPI</strong> Process on that date.
+        </p>
+    </div> <!--/.container-->
+
+    @using (Html.BeginForm("ShowProductDetailsByDate", "HG", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="container">
+            <!--Date-->
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.providedSearchDate, htmlAttributes: new { @class = "control-label col-md-6" })
+                        <div class="input-group datepicker" id="hgdatepicker">
+                            @Html.EditorFor(model => model.providedSearchDate, new { htmlAttributes = new { @class = "form-control", @placeholder = "Date", required = "required" } })<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        </div>
+                        <center>@Html.ValidationMessageFor(model => model.providedSearchDate, "", new { @class = "text-danger" })</center>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                        $('#hgdatepicker').datetimepicker({
+                            format: "DD/MM/YYYY"
+                        }).on('changeDate', function (ev) {
+                            $(this).data('DateTimePicker').hide();
+
+                        });
+                    });
+            </script>
+            <!--/.Date-->
+            <br />
+            <!-- Submit button -->
+            <div class="form-group">
+                <button class="btn btn-primary " id="lookupdatehg" name="lookupdatehg" type="submit" value="Submit">Submit</button>
+            </div><!-- /.form-group-->
+            <!-- /.Submit Button-->
+            <br />
+            <!-- Home and Back Button -->
+            <div class="form-inline">
+                @if (Request.UrlReferrer != null)
+                {
+                    <button type="button" class="btn btn-primary" onclick="history.go(-1); return false;">Back</button>
+                            <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Index", "Home")'">Home</button>
+                }
+            </div> <!--/.form-inline-->
+            <!--/.Home and Back Button-->
+        </div><!--/.container-->
+    }
+</body>
+
+</html>
+

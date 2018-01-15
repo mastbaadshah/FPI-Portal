@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>FPI Process Portal</h1>
+    <p class="This portal provides summarized details col-lg-offset-0 glyphicon-text-height data transferred via glyphicon-text-height FPI Process"</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>HG PDM</h2>
+        <p>
+            This view will display the FG produtcs being Sent from the HG Application (PDM Module)
+            that is being picked up by the FPI Process.
+        </p>
+        <p><a class="btn btn-default" href="@Html.AttributeEncode(Url.Action("Index", "HG"))">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>iICE Application</h2>
+        <p>This View provides a listing of FG Products that have made it to iICE and consequently the iICE Staging Environment</p>
+        <p><a class="btn btn-default" href="@Html.AttributeEncode(Url.Action("Index", "iICEStaging"))">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>SiteCore</h2>
+        <p>This View provides a listing of Products that have made it successfully to Sitecore.</p>
+        <p><a class="btn btn-default" href="@Html.AttributeEncode(Url.Action("Index", "Home"))">Learn more &raquo;</a></p>
+    </div>
+</div>

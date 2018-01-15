@@ -1,0 +1,96 @@
+﻿@model FPISummaryPortal.Models.iICE_Staging
+
+@{
+    ViewBag.Title = "Search Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+<head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <!--Call to load Jquery-->
+    <script src="~/Scripts/jquery-3.2.1.js"></script>
+    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <!-- Call to Ajx-->
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+</head>
+<body>
+    <br />
+    <br />
+    <center><h1>@ViewBag.Title</h1></center>
+
+    <p class="lead">
+        Please enter the <strong>Product Code</strong> to <strong>Search</strong> for the Product in the <strong>iICE Environment</strong> that is related to the <strong>FPI Process</strong>.
+    </p>
+    <br />
+
+    <div class="container">
+        <form role="form" data-toggle="validator" class="form-inline" id="subscriptionForm" action="iICEStaging/SearchProduct" method="post">
+            <div class="form-group mx-sm-3">
+                <label for="iiceproductcode" class="sr-only">ProductCode</label>
+                <input type="text" class="form-control" id="iiceproductcode" placeholder="ProductCode" required>
+            </div>
+            <input type="button" class="btn btn-primary" id="searchiice" value="Search" />
+        </form>
+        <br />
+        <!--Function to send the Product Code in the Search Function-->
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#searchiice').click(function () {
+                    var productcode = $('#iiceproductcode').val();
+                    var jsonData = { 'itemcode': productcode };
+                    var jsonString = JSON.stringify(jsonData);
+                    var empty = $(this).parent().find("input").filter(function () {
+                        return this.value === "";
+                    });
+                    if (empty.length) {
+
+                        alert("Product Code must be populated in order to search");
+                    }
+                    else {
+                        //alert(productcode);
+                        //alert(jsonString);
+                        $.ajax({
+                            url: '/iICEStaging/SearchProduct',
+                            type: 'POST',
+                            dataType: "json",
+                            contentType: 'application/json; charset=utf-8',
+                            data: jsonString,
+                            async: true,
+                            processData: false,
+                            cache: false,
+                            success: function (result) {
+                                //alert("checkpoint3");
+                                alert(result);
+                            },
+                            error: function (xhr) {
+                                alert('Something Went Wrong');
+                            }
+                        });
+                    }
+                });
+            });
+        </script>
+        <br />
+        <form class="form-inline">
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    @if (Request.UrlReferrer != null)
+                    {
+                        <button type="button" class="btn btn-primary" onclick="history.go(-1); return false;">Back</button>
+                    }
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Index", "Home")'">Home</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>
